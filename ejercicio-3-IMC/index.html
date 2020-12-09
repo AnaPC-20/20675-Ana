@@ -16,35 +16,37 @@
     <div class="container">
         <h2>Cálculo del IMC</h2>
         <br>
-        <form class="card p-3 bg-light">
-            <div class="form-group row">
-                <label for="numeroDNI" class="col-sm-2 col-form-label">Introduce DNI </label>
-                <div class="col-sm-2">
-                    <input id="numeroDNI" class="form-control" type=number size="8" required>
-                </div>
-                <div class="col-sm-2">
-                    <button type="button" class="btn btn-primary" onclick="calcularDNI()">Calcular</button>
-                </div>
-            </div>
-            <div class="form-group row">
-                <label for="letraNIE" class="col-sm-2 col-form-label">Introduce NIE</label>
-                <div class="col-sm-1">
-                    <input id="letraNIE" class="form-control" type="text" size="1" aria-describedby="NIEHelp">
-                    <small id="NIEHelp" class="form-text text-muted">Letras:X,Y o Z</small>
-                </div>
-                <div class="col-sm-2">
-                    <input id="numeroNIE" class="form-control" type=number size="8">
-                </div>
-                <div class="col-sm-7">
-                    <button type="button" class="btn btn-primary" onclick="calcularNIE()">Calcular</button>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12" id="res"></div>
-            </div>
-        </form>
-
-    </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form class="card p-3 bg-light">
+                    <div class="row">
+                        <div class= "col-md-3">
+                            <label for="estatura" class="col-form-label">Estatura (m) </label>
+                        </div>
+                        <div class= "col-md-3">
+                            <input id="estatura" class="form-control" type=number size="4" step=".01" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class= "col-md-3">
+                            <label for="peso" class="col-form-label">Peso (Kg)</label>
+                        </div>
+                        <div class= "col-md-3">
+                            <input id="peso" class="form-control" type=number size="4" step=".01" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class= "col-md-12">
+                            <button type="button" class="btn btn-primary float-right" onclick="calcularIMC()">Calcular</button>
+                        </div>
+                    </div>
+                </form>
+            </div> <!-- fin col 1-->
+            <div class="col-md-6">
+                 <div id="res"></div>
+            </div><!-- fin col 2-->
+        </div><!-- fin row-->
+    </div><!-- fin container-->
 </body>
 
 </html>

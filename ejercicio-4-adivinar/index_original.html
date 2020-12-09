@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title>
+        ADIVINA adivinanza
+    </title>
+    <!--
+ *
+ *El código de esta script, es un poco misterioso. Algún programador Clase "C", no ha usado
+ *nombres descriptivos y ahora, nos toca pegarnos y descubrir qué narices hace este código,
+ *para poder usarlo en nuestro proyecto.
+ *
+ *
+ *Se pide:
+ *
+ *1) Adivinar la funcionalidad del método adivinaQueHace -- Verifica si una palabra es un palíndromo.
+ *2) Una vez descubierto, aplicar un nombre apropiado al método -- Verificador de palíndromos.
+ *3) Idear un método equivalente, pero distinto. Es decir, crear un método
+ *que haga lo mismo que adivinaQueHace, pero de otra manera.
+ *4) EXTRA: Sólo si resolviste los puntos anteriores, implementa una versión recursiva.
+ -->
+    <script language="javascript">
+
+        function adivinaQueHace() {
+            var bd = true;
+            var cad = document.getElementById("palabra").value;
+            var i = 0;
+            var j = cad.length - 1;
+
+            while ((i < j) && (bd)) {
+                if (cad.charAt(i) == cad.charAt(j)) {
+                    bd = true;
+                } else {
+                    bd = false;
+                }
+                i++;
+                j--;
+            }
+
+   console.log ("bd = " + bd);
+            return bd;
+        }
+
+    </script>
+</head>
+
+<body>
+    <label for="palabra">PALABRA</label>
+    <input type="text" id="palabra">
+    <button onclick="adivinaQueHace();">Empieza</button>
+    <p id="p1"></p>
+</body>
+
+</html>
