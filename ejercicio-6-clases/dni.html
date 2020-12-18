@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>DNI class</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='dni.js'></script>
+</head>
+<body id="cuerpo">
+    <label for="dni">Introduzca su NIF o NIE completo</label>
+    <select name="letras" id="letra_nie">
+        <option value=" ">Sin letra</option>
+        <option value="X">X</option>
+        <option value="Y">Y</option>
+        <option value="Z">Z</option>
+    </select>
+    <input name="dni" id="dni" type="number" size = "8">
+    <input name= "letra_DNI" id = "letra_DNI" type= "text" size ="1">
+    <input type="button" value="CALCULAR" onclick="calcularLetraDni()">
+</body>
+</html>

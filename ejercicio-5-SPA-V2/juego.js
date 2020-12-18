@@ -9,7 +9,6 @@ var array_vidas = [];
 var num_jugados = [];
 
 console.log("numero random", num_ramdom);
-console.log ("usuario", window.localStorage.getItem("nombre"));
 
 function cargar_web() {
 
@@ -33,7 +32,6 @@ function cargar_web() {
         img_vida.className = "vidas";
         array_vidas[i] = img_vida;
         div_vidas.appendChild(array_vidas[i]);
-        console.log(array_vidas[i]);
     }
 
     // Listado de apuestas   
@@ -44,16 +42,19 @@ function cargar_web() {
         div_apuestas.appendChild(div_numero);
     }
 
-    // ocultar boton Cambio Usuario y Recargar
+    // ocultar boton Cambio Usuario, Recargar y Ranking
 
     document.getElementById("nuevo_user").style.display = "none";
     document.getElementById("recargar").style.display = "none";
+    document.getElementById("ranking").style.display = "none";
 }
 
 function getUser() {
     return (localStorage.getItem("usuarioActivo"));
 }
+
 function cambiarUsuario(){
+    localStorage.removeItem("usuarioActivo");
     window.location.assign("index.html");
 }
 
@@ -90,7 +91,6 @@ function jugar() {
 
     if (numero_us == num_ramdom || num_vidas == 0) {
         fin_juego(numero_us);
-        actualizar_LS();
     }
 }
 
@@ -120,11 +120,22 @@ function fin_juego(numero_jugado) {
         gif_final.src = "img/acierto.gif";
         texto_final.innerHTML = "¡¡Enhorabuena!!. Has acertado el número oculto. ACUMULAS 1 PUNTO";
         texto_final.style.color = "green";
+
+         // Crear objeto partida
+        var partida = new Partida(getUser(),num_errores, 1);
     } else{
         gif_final.src = "img/fallo.gif";
         texto_final.innerHTML = "Has agotado todas las vidas. El número oculto es <b>"+ num_ramdom +"</br> ACUMULAS 0 PUNTOS";
         texto_final.style.color = "red";
+
+         // Crear objeto partida
+        var partida = new Partida(getUser(),num_errores, 0);
     }
+
+    // Añadir objeto a LS
+    partida.anadirLS();
+    console.log(partida);
+    console.log(getUser());
 
     pagina.appendChild(fila_nueva);
     fila_nueva.appendChild(texto_final);
@@ -133,11 +144,12 @@ function fin_juego(numero_jugado) {
     // Mostrar botón cambio de usuario
     document.getElementById("nuevo_user").style.display = "inline-block";
 
+    // Mostrar botón ver marcador
+    document.getElementById("ranking").style.display = "inline-block";
+
     // Mostrar botón volver a jugar
 
     document.getElementById("recargar").style.display = "inline-block";
 }
-
-
 
 
