@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Dónde estamos</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="estilomapa.css">
+    <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyATywVsUuLkCWuZMV_OppTYMTYiURooQ7k&callback=initMap"></script>
+    <script>
+        let divout = null;
+        let mapa = null;
+    
+        const LATITUD_MADRID = 40.4167;
+        const LONGITUD_MADRID = -3.70325;
+    
+        function dibujarUbicacion(latitud, longitud) {
+            //dibujar en el mapa de google un marcador
+            let pos_actual = { lat: latitud, lng: longitud };
+    
+            let marcador = new google.maps.Marker(
+                {
+                    position: pos_actual,
+                    title: "Estás aquí"
+                }
+            );
+    
+            marcador.setMap(mapa);
+    
+        } 
+    
+        function initMap() {
+            mapa = new google.maps.Map(
+                document.getElementById("map"),
+                {
+                    center: { lat: LATITUD_MADRID, lng: LONGITUD_MADRID },
+                    zoom: 10
+                }
+            );
+        }
+    
+        function encuentrame() {
+            divout = document.getElementById("out");
+            if (!navigator.geolocation) {
+                console.log("Estoy en un navegador antiguo");
+                console.log("que no tiene API GEOLOCATION!");
+                fallo();
+            }
+            else {
+                console.log("Estoy en un navegador moderno");
+                console.log("Sí tiene API GEOLOCATION!");
+                console.log("preguntamos...");
+                navigator.geolocation.getCurrentPosition(exito, fallo);
+                divout.innerHTML = "Buscando ...";
+            }
+        }
+        function exito(posicion) {
+            let latitud = posicion.coords.latitude;
+            let longitud = posicion.coords.longitude;
+            divout.innerHTML = "Latitud = " + latitud + "Longitud = " + longitud;
+            dibujarUbicacion(latitud, longitud);
+        }
+        function fallo() {
+            console.log("No esta disponible la ubicación");
+            divout.innerHTML = "No esta disponible la ubicación";
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="encuentrame()">DÓNDE ESTOY</button>
+    <div id="out"></div>
+    <div id="map"></div>
+</body>
+
+</html>

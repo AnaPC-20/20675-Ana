@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>CALCULA LETRA DNI</title>
-    <meta charset="UTF-8">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>DNI en Github</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <script>
-
-        //const URL_LETRA_DNI = "http://10.1.2.10:8080/js20765/ObtenerDni?dni=";
-        const URL_LETRA_DNI = "http://10.1.2.10:8080/js20765/ObtenerInfoDni?dni=";
+        const URL_LETRA_DNI = "http://my-json-server.typicode.com/AnaPC-20/BBDD/infodni?dni=";
         //TODO VALIDAR LA ENTRADA
         var xhr = new XMLHttpRequest();
         function calcularURL(numero) {
@@ -78,7 +78,6 @@
 
     </script>
 </head>
-
 <body>
     <fieldset style="width:400px">
         <legend>CALCULADORA LETRA DNI</legend>
@@ -90,5 +89,4 @@
         <div id="mas_datos"></div>
     </fieldset>
 </body>
-
 </html>
