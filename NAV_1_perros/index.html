@@ -1,0 +1,43 @@
+<!--
+    https://dog.ceo/dog-api/
+    Cargar un tablero de 3*3 con imágenes aleatorias de perros y un botón para que se regenere
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Perros</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='estilos.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <div id="contenedor">
+        <div id="datos">
+            <h1 id="titulo">Tablero perruno</h1>
+            <form id="control">
+                <label for="listado">Elige una raza</label>
+                <select id="razas" name="option">
+                    <option value="0" selected>--Sin filtro--</option>
+                </select>
+                <input type="button" value="Cargar panel" onclick="buscarFotos()">
+            </form>
+            <p id="mensaje"></p>
+        </div>
+        <div id="tablero">
+            <div class="fila">
+                <img><img><img>
+            </div>
+            <div class="fila">
+                <img><img><img>
+            </div>
+            <div class="fila">
+                <img><img><img>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+</html>
