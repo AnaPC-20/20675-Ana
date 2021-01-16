@@ -40,11 +40,11 @@ function recibirDatos(){
                 console.log("Todo OK");
                 if (tipo_llamada== "load"){
                     console.log("entra en load")
-                    buscarRazas();
+                    cargarRazas();
                 }
                 if(tipo_llamada== "fotos"){
                     console.log("entra en fotos")
-                    cargarPanel();
+                    cargarFotos();
                 }
                 break;
             case 204:
@@ -64,7 +64,7 @@ function recibirDatos(){
     }
 }
 
-function buscarRazas(){
+function cargarRazas(){
     var razas = JSON.parse(xhr.responseText).message;
     console.log("razas",razas);
     var listado = document.getElementById("razas");
@@ -80,7 +80,7 @@ function buscarRazas(){
     } 
 }
 
-function cargarPanel(){
+function cargarFotos(){
     var fotos = JSON.parse(xhr.responseText).message;
     console.log(fotos);
     var tablero = document.getElementsByTagName("img");
