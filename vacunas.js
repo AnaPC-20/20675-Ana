@@ -740,6 +740,8 @@ function dibujarGraficaLinea(ctx, ejeX, ejeY, color, leyenda) {
 
         // Configuration options go here
         options: {
+            responsive: true,
+            aspectRatio: 1,
             scales: {
                 yAxes: [{
                     ticks: {
