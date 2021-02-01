@@ -88,18 +88,28 @@ function parseaGraficos() {
 
 
 function parseaJSONVacunas() {
-    fetch(URL_COVID_APP)
+    fetch("https://covid-vacuna.app/data/latest.json")
         .then(response => response.json())
         .then(data => {
+
+
             dibujarGraficosCCAA(data);
             muestraDatosVacunaMadrid(data);
             muestraDatosVacunaEspaña(data);
-
-        })
-        .catch(function (error) {
-            window.alert("HA FALLADO EL JSON DE covid-vacunas.app. Error: " + error.message);
-            console.log('HA FALLADO EL JSON DE covid-vacunas.app. Hubo un problema con la petición Fetch:' + error.message);
         });
+
+    /*  fetch(URL_COVID_APP)
+          .then(response => response.json())
+          .then(data => {
+              dibujarGraficosCCAA(data);
+              muestraDatosVacunaMadrid(data);
+              muestraDatosVacunaEspaña(data);
+  
+          })
+          .catch(function (error) {
+              window.alert("HA FALLADO EL JSON DE covid-vacunas.app. Error: " + error.message);
+          //    console.log('HA FALLADO EL JSON DE covid-vacunas.app. Hubo un problema con la petición Fetch:' + error.message);
+          });*/
 }
 
 
@@ -179,7 +189,7 @@ function recibirGraficos() {
         //   console.log("respuesta rx");
         switch (xhrGraficos.status) {
             case 200:
-                console.log("respuesta OK");
+                //                console.log("respuesta OK");
                 //recoge el csv de la página
                 let csv_raw = xhrGraficos.responseText;
                 console.log("csv = " + csv_raw);
@@ -462,7 +472,7 @@ function dibujarGraficoDosisAdministradas(datos) {
 
 //grafico pauta completa España
 function dibujarGraficoDosisPautaCompleta(datos) {
-    
+
     let fechas = [];
     let longitudDatos = datos.length;
     console.log = ("longitud datos " + longitudDatos);
@@ -520,7 +530,7 @@ function dibujarGraficoDosisPautaCompleta(datos) {
 function dibujarGraficosCCAA(array_datos) {
 
     //   let array_datos = JSON.parse(file);
-    console.log("Entro en mi funcion", array_datos);
+    //console.log("Entro en mi funcion", array_datos);
 
     let ccaa = [];
     let dosis_admin = [];
@@ -569,7 +579,7 @@ function dibujarGraficosCCAA(array_datos) {
 
     let ctx1 = document.getElementById("chart1").getContext('2d');
 
-    pintarChart(ctx1, ccaa, dosis_entregadas, 'rgb(16, 26, 214)', 'Vacunas distribuidas por CCAA');
+    dibujargraficaBarras(ctx1, ccaa, dosis_entregadas, 'rgb(16, 26, 214)', 'Vacunas distribuidas por CCAA');
 
     // ==> Chart 2: Porcentaje de dosis administradas sobre las entregadas.
     let admin_total = dosis_admin.pop();
@@ -590,7 +600,7 @@ function dibujarGraficosCCAA(array_datos) {
         por_admin_ccaa[i] = (dosis_admin[i] * 100 / dosis_entregadas[i]).toFixed(2);
     }
 
-    pintarChart(ctx2, ccaa, por_admin_ccaa, 'rgb(226, 83, 3)', '% dosis admin. respecto las entregadas');
+    dibujargraficaBarras(ctx2, ccaa, por_admin_ccaa, 'rgb(226, 83, 3)', '% dosis admin. respecto las entregadas');
 
     // ==> Chart 3: Personas pauta completa.
 
@@ -606,7 +616,7 @@ function dibujarGraficosCCAA(array_datos) {
     // Datos para la gráfica (ctx, ejeX, ejeY, color, leyenda) 
 
     let ctx3 = document.getElementById("chart3").getContext('2d');
-    pintarChart(ctx3, ccaa, dosis_adminx2, 'rgb(83, 225, 162)', "Pauta completa en España");
+    dibujargraficaBarras(ctx3, ccaa, dosis_adminx2, 'rgb(83, 225, 162)', "Pauta completa en España");
 
 }
 
