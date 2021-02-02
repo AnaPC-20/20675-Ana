@@ -50,7 +50,7 @@
       height: 100vh;
     }
 
-    
+
     /*  ion-footer {
             background-color: rgb(235, 68, 90);
             //1 problemas con botones: más lenta la carga de mapas
@@ -138,195 +138,195 @@
 
 
         <ion-slides pager="true">
-            <!-------------------------------------------------------------------------------------------------------------------------->
-            <!--INICIO SLIDE 1: EVOLUCIÓN MADRID POR FECHA -->
-            <ion-slide>
-                <ion-card>
+          <!-------------------------------------------------------------------------------------------------------------------------->
+          <!--INICIO SLIDE 1: EVOLUCIÓN MADRID POR FECHA -->
+          <ion-slide>
+            <ion-card>
+              <div>
+                <section>
+                  <div>
                     <div>
-                        <section>
-                            <div>
-                                <div>
-                                  <h2>DATOS DE MADRID</h2>
-                                  <img src="img/banderacm.png" alt="Datos de Madrid" width="20"
-                                        height="15">
+                      <h2>DATOS DE MADRID</h2>
+                      <img src="img/alcala-gate.png" alt="Datos de Madrid" width="20" height="15">
 
-                                    <section>
-                                        <div>
-                                            <h3>VACUNAS RECIBIDAS</h3>
-                                            <strong><p id="dosisDistribuidas"></p></strong>
-                                            <p><strong><span id="porcentajeDosisEntregadas"></span>&nbsp;%</strong> de la población</p>
-                                        </div>
-                                        <canvas id="myChartMadridEntregadas"></canvas>
-                                        
-                                    </section>
-                                </div>
-                                <div><img src="img/vacuna.png" alt="Vacunas administradas en Madrid" width="150"
-                                        height="150">
-                                    <section>
-                                        <div>
-                                            <h3>VACUNAS ADMINISTRADAS</h3>
-                                            <p id="dosisAdministradas"></p>
-                                            <p><strong><span
-                                              id="porcentajePoblacionAdministradas"></span>&nbsp;%</strong>
-                                      de la población
-                                  </p>
-                                        </div>
-                                        <canvas id="myChartMadridAdministradas"></canvas>
-                                        <p>El<strong><span
-                                                    id="porcentajeAdministradasTotal"></span>&nbsp;%</strong>
-                                            de vacunas recibidas ya han sido administradas
-                                        </p>
-                                    </section>
-                                </div>
-                                <div><img src="img/vacunas-completas.png" alt="Dosis completas subministradas"
-                                        width="150" height="150">
-                                    <section>
-                                        <div>
-                                            <h3>PERSONAS INMUNIZADAS</h3>
-                                            <p id="pautaCompleta"></p>
-                                            <p>El <strong> <span
-                                              id="porcenSobreTotalCompletas"></span>&nbsp;%</strong> de la población
-                                  </p>
-                                        </div>
-                                        <canvas id="myChartMadridCompletadas"></canvas>
-                                        <p hidden>Personas que han recibido las dos dosis de la vacuna.<br>Suponen un
-                                          <strong><span id="porcentajeCompletas"></span>&nbsp;%</strong>
-                                          de las dosis administradas.<br>Supone el <strong> <span
-                                                  id="porcenSobreTotalCompletasN"></span>&nbsp;%</strong> del
-                                          total sobre la población de la Comunidad de Madrid
-                                      </p>
-                                    </section>
-                                </div>
-                            </div>
-                        </section>
+                      <section>
+                        <div>
+                          <h3>VACUNAS RECIBIDAS</h3>
+                          <strong>
+                            <p id="dosisDistribuidas"></p>
+                          </strong>
+                          <p><strong><span id="porcentajeDosisEntregadas"></span>&nbsp;%</strong> de la población</p>
+                        </div>
+                        <canvas id="myChartMadridEntregadas"></canvas>
+
+                      </section>
                     </div>
+                    <div><img src="img/vacuna.png" alt="Vacunas administradas en Madrid" width="150" height="150">
+                      <section>
+                        <div>
+                          <h3>VACUNAS ADMINISTRADAS</h3>
+                          <p id="dosisAdministradas"></p>
+                          <p><strong><span id="porcentajePoblacionAdministradas"></span>&nbsp;%</strong>
+                            de la población
+                          </p>
+                        </div>
+                        <canvas id="myChartMadridAdministradas"></canvas>
+                        <p>El<strong><span id="porcentajeAdministradasTotal"></span>&nbsp;%</strong>
+                          de vacunas recibidas ya han sido administradas
+                        </p>
+                      </section>
+                    </div>
+                    <div><img src="img/vacunas-completas.png" alt="Dosis completas subministradas" width="150"
+                        height="150">
+                      <section>
+                        <div>
+                          <h3>PERSONAS INMUNIZADAS</h3>
+                          <p id="pautaCompleta"></p>
+                          <p>El <strong> <span id="porcenSobreTotalCompletas"></span>&nbsp;%</strong> de la población
+                          </p>
+                        </div>
+                        <canvas id="myChartMadridCompletadas"></canvas>
+                        <p hidden>Personas que han recibido las dos dosis de la vacuna.<br>Suponen un
+                          <strong><span id="porcentajeCompletas"></span>&nbsp;%</strong>
+                          de las dosis administradas.<br>Supone el <strong> <span
+                              id="porcenSobreTotalCompletasN"></span>&nbsp;%</strong> del
+                          total sobre la población de la Comunidad de Madrid
+                        </p>
+                      </section>
+                    </div>
+                    <small > - Datos actualizados <span id="fechaAct"></span>.</small>
+                  </div>
+                </section>
+              </div>
 
-                    <ion-card-header>
-                        <ion-card-subtitle>Vacunación COVID-19 en España</ion-card-subtitle>
-                        <ion-card-title>Deslice izquierda o derecha para visualizar más datos</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>Fuente: Ministerio de Sanidad</ion-card-content>
-                </ion-card>
-            </ion-slide>
-            <!-------------------------------------------------------------------------------------------------------------------------->
-            <!--INICIO SLIDE 2: EVOLUCIÓN ESPAÑA POR FECHA -->
-            <ion-slide>
-                <ion-card>
+              <ion-card-header>
+                <ion-card-subtitle>Vacunación COVID-19 en España</ion-card-subtitle>
+                <ion-card-title>Deslice izquierda o derecha para visualizar más datos</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>Fuente: Ministerio de Sanidad</ion-card-content>
+            </ion-card>
+          </ion-slide>
+          <!-------------------------------------------------------------------------------------------------------------------------->
+          <!--INICIO SLIDE 2: EVOLUCIÓN ESPAÑA POR FECHA -->
+          <ion-slide>
+            <ion-card>
+              <div>
+                <section>
+                  <div>
                     <div>
-                        <section>
-                            <div>
-                                <div>
-                                  <h2>DATOS DE ESPAÑA</h2>
-                                  <img src="img/banderaesp.webp" alt="Datos de España" width="20"
-                                  height="15">
-                                    <section>
-                                        <div>
-                                            <h3>VACUNAS RECIBIDAS</h3>
-                                            <canvas id="myChart"></canvas>
-                                        </div>
-                                        <p>Total de dosis distrubuidas por fecha.</p>
-                                    </section>
-                                </div>
-                                <div>
-                                    <!--<img src="img/infographic.png" alt="Vacunas administradas en Madrid"
+                      <h2>DATOS DE ESPAÑA</h2>
+                      <img src="img/flag.png" alt="Datos de España" width="20" height="15">
+                      <section>
+                        <div>
+                          <h3>VACUNAS RECIBIDAS</h3>
+                          <p id="dosis_totales"></p>
+                          <canvas id="myChart"></canvas>
+                        </div>
+                        <p id="chart1_text"></p>
+                      </section>
+                    </div>
+                    <div>
+                      <!--<img src="img/infographic.png" alt="Vacunas administradas en Madrid"
                 width="150" height="150">-->
-                                    <section>
-                                        <div>
-                                            <h3>VACUNAS ADMINISTRADAS</h3>
-                                            <canvas id="myChartAdministradas"></canvas>
-                                        </div>
-                                        <p>Total de dosis administradas por fecha.</p>
-                                    </section>
-                                </div>
-                                <div>
-                                    <!--<img src="img/line-chart.png" alt="Dosis completas subministradas"
-                width="150" height="150">-->
-                                    <section>
-                                        <div>
-                                            <h3>PERSONAS INMUNIZADAS</h3>
-                                            <canvas id="myChartCompletada"></canvas>
-                                        </div>
-                                        <p>Personas que han recibido las dos dosis de la vacuna.</p>
-                                    </section>
-                                </div>
-                                <small> - Datos actualizados <spam title="January 22"
-                                        datetime="January 22">hace 1 día</spam>.</small>
-                            </div>
-                        </section>
+                      <img src="img/vaccine.png" alt="Vacunas administradas en España" width="150" height="150">
+                      <section>
+                        <div>
+                          <h3>VACUNAS ADMINISTRADAS</h3>
+                          <p id="dosis_admin"></p>
+                          <canvas id="myChartAdministradas"></canvas>
+                        </div>
+                        <p id="chart2_text"></p>
+                      </section>
                     </div>
-
-                    <ion-card-header>
-                        <ion-card-subtitle>Vacunación COVID-19 en España</ion-card-subtitle>
-                        <ion-card-title>Deslice izquierda o derecha para visualizar más datos</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>Fuente: Ministerio de Sanidad</ion-card-content>
-                    <p style="display: none">Mi copyright: tu quien ere peazo p</p>
-                </ion-card>
-            </ion-slide>
-
-            <!-------------------------------------------------------------------------------------------------------------------------->
-            <!--INICIO SLIDE 3: ÚLTIMOS DATOS ESPAÑA POR CCAA-->
-
-            <ion-slide>
-                <ion-card>
                     <div>
-                        <section>
-                            <div>
-                                <div>
-                                  <h2>DATOS POR COMUNIDADES</h2>
-                                  <img src="img/banderasccaa.jpg" alt="Dato por comunidades" width="20"
-                                  height="15">
-                                    <section>
-                                        <div>
-                                            <h3>VACUNAS RECIBIDAS</h3>
-                                            <p id="dosis_totales"></p>
-                                            <canvas id="chart1"></canvas>
-                                            <p id="chart1_text"></p>
-                                        </div>
-                                    </section>
-                                </div>
-                                <div>
-                                    
-                                    <section>
-                                        <div>
-                                            <h3>VACUNAS ADMINISTRADAS</h3>
-                                            <p id="dosis_admin"></p>
-                                            <canvas id="chart2"></canvas>
-                                            <p id="chart2_text"></p>
-                                        </div>
-                                    </section>
-                                </div>
-                                <div>
-                                    
-                                    <section>
-                                        <div>
-                                            <h3>PERSONAS INMUNIZADAS</h3>
-                                            <p id="pauta_comp"></p>
-                                            <canvas id="chart3"></canvas>
-                                            <p id="chart3_text"></p>
-                                        </div>
-                                    </section>
-                                </div><small> - Datos actualizados <time title="January 22"
-                                        datetime="January 22">hace 1 día</time>.</small>
-                            </div>
-                        </section>
+                      <!--<img src="img/line-chart.png" alt="Dosis completas subministradas"
+                width="150" height="150">-->
+                    <img src="img/vaccine_completed.png" alt="Inmunizados en España" width="150" height="150">
+                      <section>
+                        <div>
+                          <h3>PERSONAS INMUNIZADAS</h3>
+                          <p id="pauta_comp"></p>
+                          <canvas id="myChartCompletada"></canvas>
+                        </div>
+                        <p id="chart3_text"></p>
+                      </section>
                     </div>
+                    <small > - Datos actualizados <span id="fechaActu">.</small>
+                  </div>
+                </section>
+              </div>
 
-                    <ion-card-header>
-                        <ion-card-subtitle>Vacunación COVID-19 en España</ion-card-subtitle>
-                        <ion-card-title>Deslice izquierda o derecha para visualizar más datos</ion-card-title>
-                    </ion-card-header>
-                    <ion-card-content>Fuente: Ministerio de Sanidad</ion-card-content>
-                </ion-card>
-            </ion-slide>
+              <ion-card-header>
+                <ion-card-subtitle>Vacunación COVID-19 en España</ion-card-subtitle>
+                <ion-card-title>Deslice izquierda o derecha para visualizar más datos</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>Fuente: Ministerio de Sanidad</ion-card-content>
+              <p style="display: none">Mi copyright: tu quien ere peazo p</p>
+            </ion-card>
+          </ion-slide>
+
+          <!-------------------------------------------------------------------------------------------------------------------------->
+          <!--INICIO SLIDE 3: ÚLTIMOS DATOS ESPAÑA POR CCAA-->
+
+          <ion-slide>
+            <ion-card>
+              <div>
+                <section>
+                  <div>
+                    <div>
+                      <h2>DATOS POR COMUNIDADES</h2>
+                      <img src="img/spain.png" alt="Dato por comunidades" width="20" height="15">
+                      <section>
+                        <div>
+                          <h3>VACUNAS RECIBIDAS</h3>
+                          
+                          <canvas id="chart1"></canvas>
+                          
+                        </div>
+                      </section>
+                    </div>
+                    <div>
+
+                      <section>
+                        <div>
+                          <h3>VACUNAS ADMINISTRADAS</h3>
+                          
+                          <canvas id="chart2"></canvas>
+                          
+                        </div>
+                      </section>
+                    </div>
+                    <div>
+
+                      <section>
+                        <div>
+                          <h3>PERSONAS INMUNIZADAS</h3>
+                         
+                          <canvas id="chart3"></canvas>
+                          
+                        </div>
+                      </section>
+                    </div>
+                    <small > - Datos actualizados <span id="fechaActua">.</small>
+                  </div>
+                </section>
+              </div>
+
+              <ion-card-header>
+                <ion-card-subtitle>Vacunación COVID-19 en España</ion-card-subtitle>
+                <ion-card-title>Deslice izquierda o derecha para visualizar más datos</ion-card-title>
+              </ion-card-header>
+              <ion-card-content>Fuente: Ministerio de Sanidad</ion-card-content>
+            </ion-card>
+          </ion-slide>
         </ion-slides>
 
-    </ion-content>
+      </ion-content>
     </div>
-    
+
   </ion-app>
 
-  
+
   <script src="cordova.js"></script>
   <script src="js/index.js"></script>
   <script src="js/datosvacunacion.js"></script>
