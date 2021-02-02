@@ -420,17 +420,13 @@ function dibujarGraficoDosisPautaCompletaTotal(datos) {
 // Los 20 últimos arrays son los datos mas recientes: 17 CCAA + Ceuta + Melilla + Totales
 // Las posiciones que nos interesan:
 // [0]=fecha informe ;[1]= ccaa, [4]= dosis entregadas, [5]=dosis admin, [6]=% admin sobre entregadas, 
-// [7]= pauta completa[8] = fecha ultima vacuna registrada.let ccaa = [];
+// [7]= pauta completa[8] = fecha ultima vacuna registrada.
 
 function dibujarGraficosCCAA(array_datos) {
 
     //Datos totales mas recientes
     let datos_totales = array_datos.pop();
 
-    // Fecha del informe
-    let fecha_inf = document.getElementById("fecha");
-  //  fecha_inf.innerHTML = datos_totales[0];
-    console.log(fecha_inf);
     
     // Datos de CCAA mas recientes
     let ccaa = [];
